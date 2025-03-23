@@ -1,0 +1,1 @@
+This program manages email addresses of contacts using a Python class named Contact with attributes: first name, last name, and email. It provides a menu allowing users to display all contacts, add new contacts, or exit, storing contact instances in a list or dictionary. The program formats printed output neatly and does not save data to disk.
