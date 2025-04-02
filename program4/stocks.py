@@ -52,7 +52,7 @@ def cancel(event):
     frame.Close()
 
 app = wx.App(False)
-frame = wx.Frame(None, title='read data', size=(500, 400))
+frame = wx.Frame(None, title='read data', size=(630, 400))
 panel = wx.Panel(frame)
 
 vertical_box = wx.BoxSizer(wx.VERTICAL)
@@ -66,6 +66,7 @@ list_ctrl = wx.ListCtrl(panel, style=wx.LC_REPORT)
 column_labels = ["Company", "Symbol", "Purchase Price", "Current Price", "Shares", "Gain/Loss"]
 for col, label in enumerate(column_labels):
     list_ctrl.InsertColumn(col, label)
+    list_ctrl.SetColumnWidth(col, 100)
 vertical_box.Add(list_ctrl, proportion=1, flag=wx.EXPAND | wx.ALL, border=5)
 
 horizontal_box = wx.BoxSizer(wx.HORIZONTAL)
