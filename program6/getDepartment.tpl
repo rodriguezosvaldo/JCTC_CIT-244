@@ -31,10 +31,10 @@
             <h1>Get Payroll by Department</h1><br>
             <form action="/getDepartment" method="POST">
                 <label for="department">Select a department</label>
-                <select name="department" id="department" class="form-control">
-                    {foreach from=$departments item=department}
-                        <option value="{$department.id}">{$department.name}</option>
-                    {/foreach}
+                <select name="department" id="department" class="form-control" style="width: 20%;">
+                    %for department in departments:
+                        <option value="{{department}}">{{department}}</option>
+                    %end
                 </select><br>
                 <input type="submit" value="Get Payroll" class="btn btn-primary">
             </form>

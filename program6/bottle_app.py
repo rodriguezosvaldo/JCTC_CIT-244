@@ -7,7 +7,17 @@ def home():
 
 @route('/getDepartment', method='GET')
 def get_department():
-    return template('getDepartment')
+    conn = sqlite3.connect('payroll.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT department FROM employees")
+    departments_data = cursor.fetchall()
+    departments = []
+    for i in departments_data:
+        departments.append(i[0]) if i[0] not in departments else None
+    
+    cursor.close()
+    conn.close()
+    return template('getDepartment', departments=departments)
 
 @route('/editHours', method='GET')
 def edit_hours():
@@ -33,3 +43,9 @@ def edit_hours():
     conn.commit()
     conn.close()
     return template('editHours', success=True)
+
+
+
+
+
+run(host='localhost', port=8080)

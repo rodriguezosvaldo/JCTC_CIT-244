@@ -30,8 +30,8 @@
         <main>
             <h1>Enter Employer ID and Hours Worked</h1>
             <form action="/editHours" method="POST">
-                <input type="text" id="employeeId" name="emp_id" placeholder="Employee ID" class="form-control"><br>
-                <input type="text" id="hoursWorked" name="hrs_worked" placeholder="Hours Worked" class="form-control"><br>
+                <input type="text" id="employeeId" name="emp_id" placeholder="Employee ID" class="form-control" style="width: 20%;"><br>
+                <input type="text" id="hoursWorked" name="hrs_worked" placeholder="Hours Worked" class="form-control" style="width: 20%;"><br>
                 <input type="submit" value="Submit" class="btn btn-primary" id="submitButton"><br><br>
             </form>
         </main>
